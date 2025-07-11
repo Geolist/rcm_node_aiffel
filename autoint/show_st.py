@@ -13,7 +13,7 @@ from tensorflow.keras.models import load_model
 @st.cache_resource
 def load_data():
     '''
-    앱에서 보여줄 필요 데이터를 가져오는 함수입니다.
+    앱에서 보여줄 필요 데이터를 가져오는 함수입니다.`
     - 사용자, 영화, 평점 데이터를 가져옵니다.
     - 앞서 저장된 모델도 불러오고 구현해둡니다.
     '''

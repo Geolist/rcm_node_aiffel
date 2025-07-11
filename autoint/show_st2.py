@@ -32,8 +32,11 @@ def load_data():
     user_df = pd.read_csv(f'{data_path}/{movielens_dir_nm}/users_prepro.csv')
 
 
-    model = AutoIntMLPModel(field_dims, embed_dim, att_layer_num=3, att_head_num=2, att_res=True,
+    model = AutoIntMLPModel(field_dims, embed_dim, att_layer_num=3, att_head_num=2, att_res=True, dnn_hidden_units=(32, 32), dnn_activation='relu',
                              l2_reg_dnn=0, l2_reg_embedding=1e-5, dnn_use_bn=False, dnn_dropout=dropout, init_std=0.0001)
+    
+
+    
     model(tf.constant([[0] * len(field_dims)], dtype=tf.int64))
 
     model.load_weights(f'{model_path}/autoIntMLP_model_weights.weights.h5') 
