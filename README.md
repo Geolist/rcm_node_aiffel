@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+# rcm_node_aiffel
+
+# 노드상의 조건으로 mymodel ndcg : 0.66161mymodel hitrate : 0.63017
+
+# 파라미터(조건) 변경 : mymodel ndcg : 0.67603mymodel hitrate : 0.63987
+
 ## 가상환경 설정
 
 * 새로운 가상환경을 생성한 뒤, 아래 버전으로 진행해 주세요.
@@ -39,31 +44,3 @@ streamlit run show_st.py
 * **TensorFlow 버전에 따라** 가중치 파일의 확장자가 다를 수 있습니다. (제공되는 코드는 .weights 가 하나씩 더 붙어있습니다)참고해주세요
 * 코드 내 `dtype.longlong` 부분은 `int64` 또는 `int32`로 변경되어야 할 수 있습니다. 참고해주세요
 * 다양한 오류가 발생하지만 참고 해주세요. 😄
-=======
-# rcm_node_aiffel
-
-노드상의 조건으로 mymodel ndcg : 0.66161mymodel hitrate : 0.63017
-
-파라미터(조건) 변경 :
-epochs=10
-learning_rate= 0.0005
-dropout= 0.3
-batch_size = 1024
-embed_dim= 32
-
-# 모델 정의
-autoIntMLP_model = AutoIntMLPModel(
-    field_dims=field_dims,
-    embedding_size=embed_dim,
-    att_layer_num=3,
-    att_head_num=2,
-    att_res=True,
-    dnn_hidden_units=(64, 32),               # 추가: DNN 은닉층 구조
-    dnn_activation='swish',                  # 추가: 활성화 함수
-    l2_reg_dnn=1e-4,
-    l2_reg_embedding=1e-5,
-    dnn_use_bn=True,
-    dnn_dropout=dropout,
-    init_std=0.001
-)
->>>>>>> 8569a50400bc5aeca73e7f9d02bd730cf6a6dd9f
